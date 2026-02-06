@@ -1,99 +1,94 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For Shivank 💙</title>
+  <title>Shivank 💘</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: white;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    .section {
-      min-height: 100vh;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+    .card {
+      background: rgba(255,255,255,0.15);
       padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 320px;
+      backdrop-filter: blur(10px);
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
     }
-    h2 {
-      font-weight: 300;
+    p {
+      font-size: 1.1rem;
       margin-bottom: 30px;
     }
-    .code-box {
-      background: rgba(0,0,0,0.4);
-      border-radius: 12px;
-      padding: 20px 30px;
-      font-size: 1.2rem;
-      margin: 20px 0;
-    }
     button {
-      margin-top: 30px;
       padding: 12px 25px;
       font-size: 1rem;
       border: none;
-      border-radius: 25px;
-      background: #ff5e78;
-      color: white;
+      border-radius: 30px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.2s;
     }
-    button:hover {
-      background: #ff3b5c;
+    #yes {
+      background: #ff3b6f;
+      color: white;
+    }
+    #no {
+      background: white;
+      color: #ff3b6f;
+      position: absolute;
     }
   </style>
 </head>
 <body>
 
-  <div class="section">
-    <h1>Hey Shivank 💙</h1>
-    <h2>This is not a normal website.</h2>
-    <div class="code-box">
-      ACCESS CODE: YOU + ME
-    </div>
-    <button onclick="scrollToNext()">Enter</button>
-  </div>
-
-  <div class="section">
-    <h1>Reason #1</h1>
-    <h2>You make my ordinary days feel special.</h2>
-    <div class="code-box">
-      STATUS: SAFE WITH YOU
-    </div>
-  </div>
-
-  <div class="section">
-    <h1>Reason #2</h1>
-    <h2>You show up. Always.</h2>
-    <div class="code-box">
-      STATUS: TRUSTED HUMAN 🧿
-    </div>
-  </div>
-
-  <div class="section">
-    <h1>Final Code</h1>
-    <h2>Decode this carefully 👀</h2>
-    <div class="code-box">
-      IF (LIFE == HARD) <br>
-      THEN (HOLD MY HAND)
-    </div>
-    <h2 style="margin-top:20px;">Will you stay with me?</h2>
+  <div class="card" id="card">
+    <h1>Shivank 💙</h1>
+    <p>Will you be my Valentine?</p>
+    <button id="yes" onclick="sayYes()">Yes 💘</button>
+    <button id="no" onmouseover="moveNo()">No 😅</button>
   </div>
 
 <script>
-  function scrollToNext() {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
+  function sayYes() {
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+        font-family:Arial;
+        color:white;
+        text-align:center;
+      ">
+        <div>
+          <h1>Yayyy 🥹💖</h1>
+          <p style="font-size:1.3rem;">
+            You’re officially my Valentine, Shivank 💙<br><br>
+            See you on 14th? 🌹
+          </p>
+        </div>
+      </div>
+    `;
+  }
+
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
   }
 </script>
 
